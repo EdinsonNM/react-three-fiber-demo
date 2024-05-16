@@ -1,25 +1,33 @@
-import { Stars } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useGalaxyGenerator from "./use-galaxy-generator";
 import { useControls } from "leva";
 
 const Galaxy = () => {
   // Your component logic here
-  const meshRef = useRef(null);
-  const positions = useGalaxyGenerator();
-  console.log(positions);
-  useFrame(() => {
-    meshRef.current.rotation.y += 0.002;
-  });
+  const meshRef = useRef<any>(null);
 
-  const { size } = useControls({
+  const { size, count } = useControls({
+    count: {
+      value: 1000,
+      min: 100,
+      step: 100,
+      max: 1000000,
+    },
     size: {
       value: 0.01,
       min: 0.01,
       max: 1,
     },
   });
+  useFrame(() => {
+    meshRef!.current!.rotation.y += 0.002;
+  });
+  useEffect(() => {
+    meshRef!.current!.geometry.dispose();
+  }, [count]);
+  const positions = useGalaxyGenerator(count);
+  console.log(positions);
 
   return (
     <>

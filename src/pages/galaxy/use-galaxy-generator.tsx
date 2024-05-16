@@ -1,15 +1,14 @@
 import { useMemo } from "react";
 
-function useGalaxyGenerator() {
-  const particlesCount = 5000;
+function useGalaxyGenerator(particlesCount: number) {
   const positions = useMemo(() => {
-    const positions = new Float32Array(particlesCount * 3);
+    const positionsA = new Float32Array(particlesCount * 3);
     for (let i = 0; i < particlesCount; i++) {
-      positions[i + 0] = (Math.random() - 0.5) * 3;
-      positions[i + 1] = (Math.random() - 0.5) * 3;
-      positions[i + 2] = (Math.random() - 0.5) * 3;
+      positionsA[i + 0] = (Math.random() - 0.5) * 3;
+      positionsA[i + 1] = (Math.random() - 0.5) * 3;
+      positionsA[i + 2] = (Math.random() - 0.5) * 3;
     }
-    return positions;
+    return positionsA;
   }, [particlesCount]);
 
   return positions;
