@@ -7,7 +7,7 @@ type Props = {
 function Layout({ children }: Props) {
   return (
     <div className="relative h-full w-full flex flex-col">
-      <nav className="flex-shrink">header</nav>
+      <nav className="flex-shrink text-3xl p-6">Galaxy</nav>
       <main className="fixed w-full h-full left-0 top-0 flex justify-center items-center">
         <Canvas gl={{ alpha: true }} style={{ background: "transparent" }}>
           <OrbitControls />
