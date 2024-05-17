@@ -1,20 +1,29 @@
 import { useMemo } from "react";
 import * as Three from "three";
-
-function useGalaxyGenerator(
-  particlesCount: number,
-  radius: number,
-  branches: number,
-  spin: number,
-  randomness: number,
-  randomnessPower: number,
-  insideColor: string,
-  outsideColor: string
-) {
+type Props = {
+  count: number;
+  radius: number;
+  branches: number;
+  spin: number;
+  randomness: number;
+  randomnessPower: number;
+  insideColor: string;
+  outsideColor: string;
+};
+function useGalaxyGenerator({
+  count,
+  radius,
+  branches,
+  spin,
+  randomness,
+  randomnessPower,
+  insideColor,
+  outsideColor,
+}: Props) {
   const particles = useMemo(() => {
-    const positions = new Float32Array(particlesCount * 3);
-    const colors = new Float32Array(particlesCount * 3);
-    for (let i = 0; i < particlesCount; i++) {
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
       const i3 = i * 3;
       const brancheAngle = Math.PI * 2 * ((i % branches) / branches);
       const radiusParticle = Math.random() * radius;
@@ -51,7 +60,7 @@ function useGalaxyGenerator(
     }
     return { positions, colors };
   }, [
-    particlesCount,
+    count,
     radius,
     branches,
     spin,
