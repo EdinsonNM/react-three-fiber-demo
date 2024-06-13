@@ -12,6 +12,10 @@ function Layout() {
       url: "/terrain-procedural-generator",
       title: "Terrain Generator",
     },
+    {
+      url: "/explotion",
+      title: "Cube Explotion",
+    },
   ];
   return (
     <div className="relative h-full w-full flex flex-col">
