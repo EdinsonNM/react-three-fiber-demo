@@ -8,6 +8,7 @@ import Openai from "./pages/openai/openai";
 import AnimationAI from "./pages/animation-ai/animation-ai";
 import MiniWorld from "./pages/mini-world/mini-world";
 import TerrainProceduralGenerator from "./pages/terrain-procedural-generator/terrain-procedural-generator";
+import Explotion from "./pages/explotion/explotion";
 
 export const router = createHashRouter([
   {
@@ -45,6 +46,10 @@ export const router = createHashRouter([
       {
         path: "/terrain-procedural-generator",
         element: <TerrainProceduralGenerator />,
+      },
+      {
+        path: "/explotion",
+        element: <Explotion />,
       },
     ],
   },
