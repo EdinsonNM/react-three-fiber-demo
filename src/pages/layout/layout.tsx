@@ -1,5 +1,3 @@
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { NavLink, Outlet } from "react-router-dom";
 
 function Layout() {
@@ -7,8 +5,13 @@ function Layout() {
     { url: "/", title: "Box" },
     { url: "/sphere", title: "sphere" },
     { url: "/galaxy", title: "Galaxy" },
-    { url: "/spectre", title: "Spectre" },
     { url: "/openai", title: "OpenAI" },
+    { url: "/animation-ai", title: "Animation AI" },
+    { url: "/mini-world", title: "MiniWorld" },
+    {
+      url: "/terrain-procedural-generator",
+      title: "Terrain Generator",
+    },
   ];
   return (
     <div className="relative h-full w-full flex flex-col">
@@ -16,10 +19,7 @@ function Layout() {
         React Three Fiber Demo
       </header>
       <main className="fixed w-full h-full left-0 top-0 flex justify-center items-center">
-        <Canvas gl={{ alpha: true }} style={{ background: "transparent" }}>
-          <OrbitControls />
-          <Outlet />
-        </Canvas>
+        <Outlet />
       </main>
       <nav className="fixed left-0 bottom-0 h-7 w-full flex gap-4 justify-center items-center">
         <ul className="flex flex-row mx-auto gap-4 mb-20">

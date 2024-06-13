@@ -5,6 +5,9 @@ import Layout from "./pages/layout/layout";
 import Box from "./pages/box/box";
 import Sphere from "./pages/sphere/sphere";
 import Openai from "./pages/openai/openai";
+import AnimationAI from "./pages/animation-ai/animation-ai";
+import MiniWorld from "./pages/mini-world/mini-world";
+import TerrainProceduralGenerator from "./pages/terrain-procedural-generator/terrain-procedural-generator";
 
 export const router = createHashRouter([
   {
@@ -30,6 +33,18 @@ export const router = createHashRouter([
       {
         path: "/openai",
         element: <Openai />,
+      },
+      {
+        path: "/animation-ai",
+        element: <AnimationAI />,
+      },
+      {
+        path: "/mini-world",
+        element: <MiniWorld />,
+      },
+      {
+        path: "/terrain-procedural-generator",
+        element: <TerrainProceduralGenerator />,
       },
     ],
   },

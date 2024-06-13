@@ -3,7 +3,9 @@ import { useEffect, useRef } from "react";
 import * as Three from "three";
 import useLevaControls from "./use-leva-controls";
 import useGalaxyGenerator from "./use-galaxy-generator";
-const Galaxy = () => {
+import CanvasContainer from "../../components/canvas-container";
+
+const GalaxyContent = () => {
   // Your component logic here
   const meshRef = useRef<any>(null);
 
@@ -43,6 +45,13 @@ const Galaxy = () => {
         />
       </points>
     </>
+  );
+};
+const Galaxy = () => {
+  return (
+    <CanvasContainer>
+      <GalaxyContent />
+    </CanvasContainer>
   );
 };
 

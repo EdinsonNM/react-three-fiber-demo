@@ -1,7 +1,9 @@
 import { Environment, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
+import CanvasContainer from "../../components/canvas-container";
+import { Canvas } from "@react-three/fiber";
 
-function Box() {
+function BoxContent() {
   const {
     wireframe,
     material,
@@ -58,6 +60,13 @@ function Box() {
       </mesh>
       {environment && <Environment preset={environmentType} background />}
     </>
+  );
+}
+function Box() {
+  return (
+    <CanvasContainer>
+      <BoxContent />
+    </CanvasContainer>
   );
 }
 export default Box;
