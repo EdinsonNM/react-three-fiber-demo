@@ -6,7 +6,7 @@ export function generateSpeech(message: string) {
       headers: {
         Accept: "audio/mpeg",
         "Content-Type": "application/json",
-        "xi-api-key": "83d28515d30cea003edaec2f40396957", // Reemplaza con tu clave API real
+        "xi-api-key": import.meta.env.VITE_ELEVEN_API_KEY as string,
       },
       body: JSON.stringify({
         text: message,
