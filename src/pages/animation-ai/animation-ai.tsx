@@ -71,10 +71,10 @@ function AnimationAIContent({
   speed = 1,
 }: PropsModel) {
   const meshRef = useRef();
-  const model = useGLTF("models/character2.glb");
+  const model = useGLTF("models/animations.glb");
   const { actions } = useAnimations(model.animations, meshRef);
+  console.log(actions);
   // Estado inicial de posición, rotación y movimiento
-
   const [velocity, setVelocity] = useState({ x: 0, y: 0, z: 0 });
   const [maxRotation, setMaxRotation] = useState(0);
   const [rotation, setRotation] = useState(0);
@@ -126,14 +126,19 @@ function AnimationAIContent({
 
   useEffect(() => {
     if (actions) {
-      actions["CharacterArmature|" + action]?.reset().fadeIn(0.5).play();
+      actions[action]?.reset().fadeIn(0.5).play();
     }
     if (["TurnLeft", "TurnRIght", "TurnAround"].includes(movement)) {
       actions["CharacterArmature|Walk"]?.reset().fadeIn(0.5).play();
     }
-    return () => actions["CharacterArmature|" + action]?.fadeOut(0.5);
+    return () => {
+      actions[action]?.fadeOut(0.5);
+    };
   }, [actions, action, movement]);
 
+  useEffect(() => {
+    actions["idle"]?.reset().fadeIn(0.5).play();
+  }, [actions]);
   return (
     <>
       {" "}
@@ -143,7 +148,7 @@ function AnimationAIContent({
         <Html
           className="w-[310px] lg:w-[800px] sm:w-[400px] md:w-[500px]"
           center
-          position={[0, 3.5, 0]}
+          position={[0, 2, 0]}
         >
           <div className="absolute bottom-full mb-2 flex flex-col items-center max-w-[800px] text-2xl md:text-3xl text-yellow-400 w-full text-center">
             <div className="relative bg-gray-900 text-yellow-500 rounded py-2 px-3">

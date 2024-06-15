@@ -2,7 +2,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 function Layout() {
   const navigation = [
-    { url: "/", title: "Box" },
+    { url: "/", title: "Hello World" },
+    { url: "/box", title: "Box" },
     { url: "/sphere", title: "sphere" },
     { url: "/galaxy", title: "Galaxy" },
     { url: "/openai", title: "OpenAI" },
@@ -16,11 +17,20 @@ function Layout() {
       url: "/explotion",
       title: "Cube Explotion",
     },
+    {
+      url: "/wiggle",
+      title: "Wiggle Bones",
+    },
+    {
+      url: "/ecommerce",
+      title: "Ecommerce",
+    },
   ];
   return (
     <div className="relative h-full w-full flex flex-col">
       <header className="flex-shrink text-3xl p-6">
-        React Three Fiber Demo
+        <div>React Three Fiber Demo</div>
+        <strong>Edinson Nuñez</strong>
       </header>
       <main className="fixed w-full h-full left-0 top-0 flex justify-center items-center">
         <Outlet />

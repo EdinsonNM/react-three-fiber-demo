@@ -9,6 +9,9 @@ import AnimationAI from "./pages/animation-ai/animation-ai";
 import MiniWorld from "./pages/mini-world/mini-world";
 import TerrainProceduralGenerator from "./pages/terrain-procedural-generator/terrain-procedural-generator";
 import Explotion from "./pages/explotion/explotion";
+import Wiggle from "./pages/wiggle/wiggle";
+import Empty from "./pages/empty/empty";
+import Ecommerce from "./pages/ecommerce/ecommerce";
 
 export const router = createHashRouter([
   {
@@ -17,6 +20,10 @@ export const router = createHashRouter([
     children: [
       {
         path: "/",
+        element: <Empty />,
+      },
+      {
+        path: "/box",
         element: <Box />,
       },
       {
@@ -50,6 +57,14 @@ export const router = createHashRouter([
       {
         path: "/explotion",
         element: <Explotion />,
+      },
+      {
+        path: "/wiggle",
+        element: <Wiggle />,
+      },
+      {
+        path: "/ecommerce",
+        element: <Ecommerce />,
       },
     ],
   },

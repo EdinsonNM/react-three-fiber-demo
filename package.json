@@ -22,7 +22,8 @@
     "react-dom": "^18.2.0",
     "react-media-recorder": "^1.6.6",
     "react-router-dom": "^6.23.1",
-    "three": "^0.164.1"
+    "three": "^0.164.1",
+    "wiggle": "^0.0.13"
   },
   "devDependencies": {
     "@types/noisejs": "^0.0.31",
