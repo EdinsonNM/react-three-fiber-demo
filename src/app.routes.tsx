@@ -12,6 +12,8 @@ import Explotion from "./pages/explotion/explotion";
 import Wiggle from "./pages/wiggle/wiggle";
 import Empty from "./pages/empty/empty";
 import Ecommerce from "./pages/ecommerce/ecommerce";
+import Room from "./pages/room/room";
+import TensorflowApp from "./pages/tensorflow/ml.tsx";
 
 export const router = createHashRouter([
   {
@@ -65,6 +67,14 @@ export const router = createHashRouter([
       {
         path: "/ecommerce",
         element: <Ecommerce />,
+      },
+      {
+        path: "/room",
+        element: <Room />,
+      },
+      {
+        path: "/tensorflow",
+        element: <TensorflowApp />,
       },
     ],
   },

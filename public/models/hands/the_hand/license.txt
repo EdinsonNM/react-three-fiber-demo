@@ -1,0 +1,8 @@
+Model Information:
+* title:	the Hand
+* source:	https://sketchfab.com/3d-models/the-hand-a0bd25ee25544603a8455121aa1242ec
+* author:	sayjing (https://sketchfab.com/sayjing)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

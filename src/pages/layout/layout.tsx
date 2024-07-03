@@ -25,6 +25,14 @@ function Layout() {
       url: "/ecommerce",
       title: "Ecommerce",
     },
+    {
+      url: "/room",
+      title: "Room",
+    },
+    {
+      url: "/tensorflow",
+      title: "Machine Learning",
+    },
   ];
   return (
     <div className="relative h-full w-full flex flex-col">

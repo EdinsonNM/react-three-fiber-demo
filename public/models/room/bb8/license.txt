@@ -1,0 +1,11 @@
+Model Information:
+* title:	BB-8 rolling robot
+* source:	https://sketchfab.com/3d-models/bb-8-rolling-robot-9ee6fcde4f014ac6b8e11227e55ce499
+* author:	paukoff (https://sketchfab.com/paukoff)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "BB-8 rolling robot" (https://sketchfab.com/3d-models/bb-8-rolling-robot-9ee6fcde4f014ac6b8e11227e55ce499) by paukoff (https://sketchfab.com/paukoff) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

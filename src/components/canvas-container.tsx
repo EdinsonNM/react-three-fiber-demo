@@ -10,6 +10,7 @@ function CanvasContainer({ children, backgroundColor = "transparent" }: Props) {
       gl={{ alpha: true }}
       style={{ background: backgroundColor }}
       camera={{ fov: 45, position: [0, 5, 20] }}
+      shadows
     >
       <OrbitControls makeDefault />
       {children}

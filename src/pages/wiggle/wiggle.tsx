@@ -15,16 +15,16 @@ import { WiggleRigHelper } from "wiggle/helper";
 const rootBoneName = "Bone";
 const bodyName = "Cube";
 const Model = () => {
+  const mesh = useRef<Group>(null);
+
   const { scene, animations } = useGLTF("./models/wiggle-spider.glb");
-  const { actions } = useAnimations(animations);
+  const { actions } = useAnimations(animations, mesh);
   const [rootBone, setRootBone] = useState<any>(null);
   const [wiggleBones, setWiggleBones] = useState<WiggleBone[]>([]);
   console.log(actions);
 
   useEffect(() => {
-    Object.keys(actions).forEach((key) => {
-      console.log(key, actions[key]!);
-    });
+    actions["body_idle"]?.play();
   }, [actions]);
   useEffect(() => {
     if (scene === null) return;
@@ -39,14 +39,14 @@ const Model = () => {
     });
     setRootBone(rootBoneT);
     setWiggleBones(wiggleBonesT);
-  }, []);
+  }, [scene]);
 
   useFrame((_, delta) => {
     wiggleBones.forEach((wiggleBone) => {
       wiggleBone.update();
     });
   });
-  const mesh = useRef<Group>(null);
+
   const { scene: sceneGlobal } = useThree();
   useEffect(() => {
     const helper = new WiggleRigHelper({
