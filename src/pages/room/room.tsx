@@ -11,6 +11,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { lerp } from "three/src/math/MathUtils";
 import * as THREE from "three";
+import Chair from "./chair";
 
 function Robot() {
   const meshRef = useRef(null);
@@ -211,6 +212,7 @@ function Room() {
       <Monitor />
       <Monitor2 />
       <Dog />
+      <Chair />
     </Canvas>
   );
 }
